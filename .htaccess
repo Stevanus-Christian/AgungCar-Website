@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^home$ index.php?module=home [L]
+RewriteRule ^galery$ index.php?module=galery [L]
+RewriteRule ^rental$ index.php?module=rental [L]
+RewriteRule ^rental$ index.php?module=rental [L]
+RewriteRule ^login$ index.php?module=login [L]
+RewriteRule ^member$ index.php?module=member [L]
+
+RewriteRule ^berandamember$ indexmember.php?module=berandamember&id=$1 [L]
+RewriteRule ^detailpesanan-(.*)$ indexmember.php?module=detailpesanan&id=$1 [L]
+
+Options All -Indexes
+
+</IfModule>
